@@ -24,6 +24,7 @@
 		methods: {
 			getAjax(){
 				const _this = this;
+				
 				demoApi1().then(data => {
 					console.log(data);
 					_this.demoData = data.body.list
