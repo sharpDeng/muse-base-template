@@ -2,6 +2,10 @@
 // Template version: 1.3.1
 // see http://vuejs-templates.github.io/webpack for documentation.
 
+//代理环境
+// let srcUlr = 'http://111.230.207.211';  //测试环境
+let srcUlr = 'http://www.shilongtang.top'; //正式环境
+
 const path = require('path')
 
 module.exports = {
@@ -10,7 +14,12 @@ module.exports = {
     // Paths
     assetsSubDirectory: 'static',
     assetsPublicPath: '/',
-    proxyTable: {},
+    proxyTable: {
+      '/long-eureka-client/': {
+        target: srcUlr,
+        changeOrigin: true
+      },
+    },
 
     // Various Dev Server settings
     host: 'localhost', // can be overwritten by process.env.HOST
